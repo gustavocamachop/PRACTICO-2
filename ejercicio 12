@@ -1,0 +1,44 @@
+EJERCICIO 12
+#include "stdafx.h"
+#include "conio.h"
+#include <string>
+#include <iostream>
+#define MAX 4
+using namespace std;
+void cargar ( int n, string M[MAX][MAX])
+{for(int a=0;a<n;a++) 
+  {for (int b=0;b<n;b++)
+    {cout<<"M["<<a<<"]["<<b<<"]: ";
+    cin>>M[a][b];
+    }
+   }
+  }
+void mostrar( int m, string N[MAX][MAX][MAX])
+{for(int a=0;a<m;a++) 
+ {for (int b=0;b<m;b++)
+  {for (int c=0;c<m;c++)
+  
+    {cout<<N[a][b][c]<<" ";
+    }cout<<"  ";
+   }cout<<endl;
+  }cout<<endl;
+ }
+
+void traspasar ( int n, string M[MAX][MAX], string M2[MAX][MAX][MAX])
+{string aux; for(int a=0;a<n;a++) 
+  {for (int b=0;b<n;b++)
+   {for (int c=0;c<n;c++)
+{aux=M[a][b]; M2[a][b][c]=aux;
+}
+}}}
+void main()
+{ int n; string M[MAX][MAX], M2[MAX][MAX][MAX];
+do {cout<<"Ingrese el tamanio de la matriz:  ";
+cin>>n;
+if (n<2) {cout<<"Debe tener un minimo de 2 filas y columnas para ser matriz"<<endl;}
+}while (n<2);
+cargar (n, M);
+traspasar (n, M,M2);
+mostrar (n,M2);
+getch();
+}
